@@ -22,13 +22,12 @@ def extractTelFromVFSContent(content):
 
     return re.search(r'.?\d{3,10}', content).group()
 
-f= open("rozaTel.txt","w+")
+f= open("tel.txt","w+")
 tmp = 'str'
-list = os.listdir('./roza tel')
+list = os.listdir('./tel')
 print (list)
 for i in list:
-    tmp = open('./roza tel/' + i, "r")
-    
+    tmp = open('./tel/' + i, "r")    
     f.write(parseFileName(i)+' Tel:' + extractTelFromVFSContent(tmp.read()) + '\n')
     tmp.close()
 f.close()
